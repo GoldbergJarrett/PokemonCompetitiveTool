@@ -40,64 +40,67 @@ namespace CompetitiveTool.Pages
         {
             if(type == null)
             {
-                int choice = rnd.Next(0, 18);
-
-                switch(choice)
+                while (type == "Normal" || type == null)
                 {
-                    case 0:
-                        type = "Bug";
-                        break;
-                    case 1:
-                        type = "Dark";
-                        break;
-                    case 2:
-                        type = "Dragon";
-                        break;
-                    case 3:
-                        type = "Electric";
-                        break;
-                    case 4:
-                        type = "Fairy";
-                        break;
-                    case 5:
-                        type = "Fighting";
-                        break;
-                    case 6:
-                        type = "Fire";
-                        break;
-                    case 7:
-                        type = "Flying";
-                        break;
-                    case 8:
-                        type = "Ghost";
-                        break;
-                    case 9:
-                        type = "Grass";
-                        break;
-                    case 10:
-                        type = "Ground";
-                        break;
-                    case 11:
-                        type = "Ice";
-                        break;
-                    case 12:
-                        type = "Normal";
-                        break;
-                    case 13:
-                        type = "Poison";
-                        break;
-                    case 14:
-                        type = "Psychic";
-                        break;
-                    case 15:
-                        type = "Rock";
-                        break;
-                    case 16:
-                        type = "Steel";
-                        break;
-                    case 17:
-                        type = "Water";
-                        break;
+                    int choice = rnd.Next(0, 18);
+
+                    switch (choice)
+                    {
+                        case 0:
+                            type = "Bug";
+                            break;
+                        case 1:
+                            type = "Dark";
+                            break;
+                        case 2:
+                            type = "Dragon";
+                            break;
+                        case 3:
+                            type = "Electric";
+                            break;
+                        case 4:
+                            type = "Fairy";
+                            break;
+                        case 5:
+                            type = "Fighting";
+                            break;
+                        case 6:
+                            type = "Fire";
+                            break;
+                        case 7:
+                            type = "Flying";
+                            break;
+                        case 8:
+                            type = "Ghost";
+                            break;
+                        case 9:
+                            type = "Grass";
+                            break;
+                        case 10:
+                            type = "Ground";
+                            break;
+                        case 11:
+                            type = "Ice";
+                            break;
+                        case 12:
+                            type = "Normal";
+                            break;
+                        case 13:
+                            type = "Poison";
+                            break;
+                        case 14:
+                            type = "Psychic";
+                            break;
+                        case 15:
+                            type = "Rock";
+                            break;
+                        case 16:
+                            type = "Steel";
+                            break;
+                        case 17:
+                            type = "Water";
+                            break;
+                    }
                 }
             }
 
@@ -125,12 +128,39 @@ namespace CompetitiveTool.Pages
 
             CurrentObjType = TypeService.GetTypeByName(type);
 
-            tempTypes.Add(CurrentObjType);
+            Type temp2 = null;
+
+            if(CurrentObjType.SuperEffective.Count > 0)
+            {
+                temp2 = TypeService.GetTypeByName(CurrentObjType.SuperEffective[0]);
+            }
+            else
+            {
+                temp2 = new Type {  };
+            }
+
+            types.Add(temp2);
 
             Types = types;
 
             TypesSuperEffectiveAgainst = TypeService.GetSuperEffectiveAgainst(type);
         }
 
+        public void Guess(Type type)
+        {
+            Console.WriteLine($"The type is {type.TypeName}");
+
+            if(CurrentObjType.SuperEffective.Count > 0)
+            {
+                if (CurrentObjType.SuperEffective.Contains(type.TypeName))
+                {
+                    Console.WriteLine("You're correct!");
+                }
+                else
+                {
+                    Console.WriteLine("You're wrong!");
+                }
+            }
+        }
     }
 }

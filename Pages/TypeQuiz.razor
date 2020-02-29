@@ -13,10 +13,10 @@
     <div class="row">
         @foreach (Type type in TypesSuperEffectiveAgainst)
         {
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <img src="@type.ImagePath" style="width:133px;height:170px;">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+            <img src="@type.ImagePath" style="width:133px;height:170px;">
 
-            </div>
+        </div>
         }
     </div>
 </div>
@@ -29,10 +29,11 @@
     <div class="row">
         @foreach (Type type in Types)
         {
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <img src="@type.ImagePath" style="width:133px;height:170px;">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+            @*<input type="image" src="@type.ImagePath" name="quizButton" class="btTxt submit" id="quizButton" />*@
+            <img @onclick="(() => Guess(type))" src="@type.ImagePath" style="width:133px;height:170px; cursor: pointer;">
 
-            </div>
+        </div>
         }
     </div>
 </div>
