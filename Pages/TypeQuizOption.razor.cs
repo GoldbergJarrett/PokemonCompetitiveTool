@@ -21,10 +21,6 @@ namespace CompetitiveTool.Pages
         }
 
         public bool IsSelected { get; set; }
-        public string IsSelectedCSS
-        {
-            get => IsSelected ? "background-color: yellow;" : "";
-        }
 
         public void OnMouseOver()
         {
