@@ -178,6 +178,9 @@ namespace CompetitiveTool.Pages
 
         public void Submit()
         {
+            CorrectResponses = new List<string>();
+            IncorrectResponses = new List<string>();
+
             HasResponded = true;
 
             foreach (var type in CurrentlySelected)
