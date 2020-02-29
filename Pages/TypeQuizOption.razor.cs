@@ -34,5 +34,7 @@ namespace CompetitiveTool.Pages
 
             IsSelected = !IsSelected;
         }
+
+        
     }
 }

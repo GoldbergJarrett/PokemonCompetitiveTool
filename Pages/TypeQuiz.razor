@@ -50,4 +50,28 @@
             </div>
         }
     </div>
+    <div @onclick="Submit" class="btn btn-primary">Attack!</div>
+    @if(HasResponded)
+    {
+        <div>
+            <div style="color: green;">
+                Correct Responses:
+                <ul>
+                    @foreach (var str in CorrectResponses)
+                    {
+                        <li>@((MarkupString)str)</li>
+                    }
+                </ul>
+            </div>
+            <div style="color: red;">
+                Incorrect Responses:
+                <ul>
+                    @foreach (var str in CorrectResponses)
+                    {
+                        <li>@((MarkupString)str)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
 </div>

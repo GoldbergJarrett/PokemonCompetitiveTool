@@ -17,6 +17,11 @@ namespace CompetitiveTool.Pages
 
         public List<Type> Types { get; set; }
         public List<Type> TypesSuperEffectiveAgainst { get; set; }
+        public List<Type> CurrentlySelected { get; set; } = new List<Type>();
+
+        public List<string> CorrectResponses { get; set; } = new List<string>();
+        public List<string> IncorrectResponses { get; set; } = new List<string>();
+        public bool HasResponded { get; set; }
 
         public bool IsCorrect { get; set; }
         public bool HasAnswered { get; set; }
@@ -153,19 +158,39 @@ namespace CompetitiveTool.Pages
         {
             Console.WriteLine($"The type is {type.TypeName}");
 
-            if(CurrentObjType.SuperEffective.Count > 0)
+            List<Type> isContained = CurrentlySelected.Where(x => x.TypeName.CompareTo(type.TypeName) == 0).ToList();
+
+            if (isContained.Count() > 0)
+            {
+                CurrentlySelected.Remove(isContained[0]);
+            }
+            else
+            {
+                CurrentlySelected.Add(type);
+            }
+
+            Console.WriteLine("Currently Selected types:");
+            foreach (var selection in CurrentlySelected)
+            {
+                Console.WriteLine($"    {selection.TypeName}");
+            }
+        }
+
+        public void Submit()
+        {
+            HasResponded = true;
+
+            foreach (var type in CurrentlySelected)
             {
                 if (CurrentObjType.SuperEffective.Contains(type.TypeName))
                 {
-                    Console.WriteLine("You're correct!");
-                    HasAnswered = true;
-                    IsCorrect = true;
+                    Console.WriteLine($"SUPER EFFECTIVE");
+                    CorrectResponses.Add($"<span style='color: orange;'>{CurrentObjType.TypeName}</span> was super effective against <span style='color: orange;'>{type.TypeName}</span>!");
                 }
                 else
                 {
-                    Console.WriteLine("You're wrong!");
-                    HasAnswered = true;
-                    IsCorrect = false;
+                    Console.WriteLine($"NOT SUPER EFFECTIVE");
+                    IncorrectResponses.Add($"<span style='color: orange;'>{CurrentObjType.TypeName}</span> was NOT super effective against <span style='color: orange;'>{type.TypeName}</span>!");
                 }
             }
         }
