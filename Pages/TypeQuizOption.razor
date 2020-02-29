@@ -1,0 +1,3 @@
+﻿<img @onclick="OnClick" src="@Option.ImagePath" 
+     style="width:133px;height:170px; cursor: pointer; @IsHoveredCSS @IsSelectedCSS" 
+     @onmouseover="OnMouseOver" @onmouseout="(() => { IsHovered = false; StateHasChanged(); })">

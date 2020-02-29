@@ -9,31 +9,45 @@
     <img src="@CurrentObjType.ImagePath" style="width:133px;height:170px;"> is super effective against:
 </div>
 
+
+
 <div class="container">
     <div class="row">
         @foreach (Type type in TypesSuperEffectiveAgainst)
         {
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-            <img src="@type.ImagePath" style="width:133px;height:170px;">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                <TypeQuizOption Option="type" OnClickHandler="Guess"/>
 
-        </div>
+            </div>
         }
     </div>
 </div>
 
+@if (HasAnswered)
+{
+    if (IsCorrect)
+    {
+        <div style="color: green; font-size: 40px;">You're Correct!</div>
+    }
+    if (!IsCorrect)
+    {
+        <div style="color: red; font-size: 40px;">You're Wrong!</div>
+    }
+}
+
 <div>
-    GAME CHOICES
+    TYPE CHOICES
 </div>
 
 <div class="container">
     <div class="row">
         @foreach (Type type in Types)
         {
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-            @*<input type="image" src="@type.ImagePath" name="quizButton" class="btTxt submit" id="quizButton" />*@
-            <img @onclick="(() => Guess(type))" src="@type.ImagePath" style="width:133px;height:170px; cursor: pointer;">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                @*<input type="image" src="@type.ImagePath" name="quizButton" class="btTxt submit" id="quizButton" />*@
+                <TypeQuizOption Option="type" OnClickHandler="Guess"/>
 
-        </div>
+            </div>
         }
     </div>
 </div>

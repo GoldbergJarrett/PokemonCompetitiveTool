@@ -18,6 +18,9 @@ namespace CompetitiveTool.Pages
         public List<Type> Types { get; set; }
         public List<Type> TypesSuperEffectiveAgainst { get; set; }
 
+        public bool IsCorrect { get; set; }
+        public bool HasAnswered { get; set; }
+
         public string CurrentType { get; set; }
         public Type CurrentObjType { get; set; }
 
@@ -155,10 +158,14 @@ namespace CompetitiveTool.Pages
                 if (CurrentObjType.SuperEffective.Contains(type.TypeName))
                 {
                     Console.WriteLine("You're correct!");
+                    HasAnswered = true;
+                    IsCorrect = true;
                 }
                 else
                 {
                     Console.WriteLine("You're wrong!");
+                    HasAnswered = true;
+                    IsCorrect = false;
                 }
             }
         }
