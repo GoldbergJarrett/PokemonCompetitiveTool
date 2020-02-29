@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Resources\Bug.png" />
+    <None Include="wwwroot\Resources\Dark.png" />
+    <None Include="wwwroot\Resources\Dragon.png" />
+    <None Include="wwwroot\Resources\Electric.png" />
+    <None Include="wwwroot\Resources\Fairy.png" />
+    <None Include="wwwroot\Resources\Fighting.png" />
+    <None Include="wwwroot\Resources\Fire.png" />
+    <None Include="wwwroot\Resources\Flying.png" />
+    <None Include="wwwroot\Resources\PokemonTypesMaster.png" />
+  </ItemGroup>
+
+</Project>
