@@ -198,6 +198,11 @@ namespace CompetitiveTool.Implementations
             return objTypes;
         }
 
+        public Type GetTypeByName(string type)
+        {
+            return _typesList.Where(x => x.TypeName.CompareTo(type) == 0).FirstOrDefault();
+        }
+
         public List<Type> GetTypes()
         {
             return _typesList;

@@ -146,6 +146,11 @@ namespace CompetitiveTool.Implementations
             throw new NotImplementedException();
         }
 
+        public Type GetTypeByName(string type)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Type> GetTypes()
         {
             return _typesList;

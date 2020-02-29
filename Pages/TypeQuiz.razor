@@ -6,7 +6,7 @@
 <div @onclick="(() => GenerateRandomTypes())" class="btn btn-primary">Regenerate</div>
 
 <div>
-    <span style="font-size: 40px;">@CurrentType</span> is super effective against:
+    <img src="@CurrentObjType.ImagePath" style="width:133px;height:170px;"> is super effective against:
 </div>
 
 <div class="container">
@@ -36,38 +36,3 @@
         }
     </div>
 </div>
-
-@*<div class="container">
-    <div class="row">
-
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <img src="Resources/Fire.png" style="width:133px;height:170px;">
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-
-            <img src="Resources/Fire.png" style="width:133px;height:170px;">
-        </div>
-        <div class="col">
-            <img src="Resources/Bug.png" style="width:133px;height:170px;">
-        </div>
-        <div class="col">
-            <img src="Resources/Dark.png" style="width:133px;height:170px;">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <img src="Resources/Dragon.png" style="width:133px;height:170px;">
-        </div>
-        <div class="col">
-            <img src="Resources/Electric.png" style="width:133px;height:170px;">
-        </div>
-        <div class="col">
-            <img src="Resources/Fairy.png" style="width:133px;height:170px;">
-        </div>
-    </div>
-</div>*@

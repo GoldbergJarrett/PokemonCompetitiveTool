@@ -19,6 +19,7 @@ namespace CompetitiveTool.Pages
         public List<Type> TypesSuperEffectiveAgainst { get; set; }
 
         public string CurrentType { get; set; }
+        public Type CurrentObjType { get; set; }
 
         //int choice1 = Rnd.Next(1, 19);
         //int choice2 = Rnd.Next(1, 19);
@@ -121,6 +122,10 @@ namespace CompetitiveTool.Pages
             {
                 types.Add(tempTypes[num]);
             }
+
+            CurrentObjType = TypeService.GetTypeByName(type);
+
+            tempTypes.Add(CurrentObjType);
 
             Types = types;
 

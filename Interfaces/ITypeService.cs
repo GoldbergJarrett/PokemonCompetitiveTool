@@ -11,5 +11,6 @@ namespace CompetitiveTool.Interfaces
         public List<Type> GetTypes();
 
         public List<Type> GetSuperEffectiveAgainst(string type);
+        public Type GetTypeByName(string type);
     }
 }
