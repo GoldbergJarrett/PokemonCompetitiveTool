@@ -55,8 +55,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Grass",
                 ImagePath = "Resources/Grass.png",
                 SuperEffective = new List<string>(){"Water", "Ground", "Rock"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -64,8 +64,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Ice",
                 ImagePath = "Resources/Ice.png",
                 SuperEffective = new List<string>(){"Grass", "Ground", "Flying", "Dragon"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fire", "Water", "Ice", "Steel"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -73,7 +73,7 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Fighting",
                 ImagePath = "Resources/Fighting.png",
                 SuperEffective = new List<string>(){"Normal", "Ice", "Rock", "Dark", "Steel"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
+                NotVeryEffective = new List<string>(){"Poison", "Flying", "Psychic", "Bug", "Fairy"},
                 NoEffect = new List<string>(){"Ghost"}
             },
             new Type
@@ -82,8 +82,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Poison",
                 ImagePath = "Resources/Poison.png",
                 SuperEffective = new List<string>(){"Grass", "Fairy"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Poison", "Ground", "Rock", "Ghost"},
+                NoEffect = new List<string>(){"Steel"}
             },
             new Type
             {
@@ -91,8 +91,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Ground",
                 ImagePath = "Resources/Ground.png",
                 SuperEffective = new List<string>(){"Fire", "Electric", "Poison", "Rock", "Steel"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Grass", "Bug"},
+                NoEffect = new List<string>(){"Flying"}
             },
             new Type
             {
@@ -100,8 +100,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Flying",
                 ImagePath = "Resources/Flying.png",
                 SuperEffective = new List<string>(){"Grass", "Fighting", "Bug"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Electric", "Rock", "Steel"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -109,8 +109,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Psychic",
                 ImagePath = "Resources/Psychic.png",
                 SuperEffective = new List<string>(){"Fighting", "Poison"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Psychic", "Steel"},
+                NoEffect = new List<string>(){"Dark"}
             },
             new Type
             {
@@ -118,8 +118,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Bug",
                 ImagePath = "Resources/Bug.png",
                 SuperEffective = new List<string>(){"Grass", "Psychic", "Dark"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -127,8 +127,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Rock",
                 ImagePath = "Resources/Rock.png",
                 SuperEffective = new List<string>(){"Fire", "Ice", "Flying", "Bug"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fighting", "Ground", "Steel"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -136,8 +136,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Ghost",
                 ImagePath = "Resources/Ghost.png",
                 SuperEffective = new List<string>(){"Psychic", "Ghost"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Dark"},
+                NoEffect = new List<string>(){"Normal"}
             },
             new Type
             {
@@ -145,8 +145,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Dragon",
                 ImagePath = "Resources/Dragon.png",
                 SuperEffective = new List<string>(){"Dragon"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Steel"},
+                NoEffect = new List<string>(){"Fairy"}
             },
             new Type
             {
@@ -154,8 +154,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Dark",
                 ImagePath = "Resources/Dark.png",
                 SuperEffective = new List<string>(){"Psychic", "Ghost"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fighting", "Dark", "Fairy"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -163,8 +163,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Steel",
                 ImagePath = "Resources/Steel.png",
                 SuperEffective = new List<string>(){"Ice", "Rock", "Fairy"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fire", "Water", "Electric", "Steel"},
+                NoEffect = new List<string>(){""}
             },
             new Type
             {
@@ -172,8 +172,8 @@ namespace CompetitiveTool.Implementations
                 TypeName = "Fairy",
                 ImagePath = "Resources/Fairy.png",
                 SuperEffective = new List<string>(){"Fighting", "Dragon", "Dark"},
-                NotVeryEffective = new List<string>(){"Rock", "Steel"},
-                NoEffect = new List<string>(){"Ghost"}
+                NotVeryEffective = new List<string>(){"Fire", "Posion", "Steel"},
+                NoEffect = new List<string>(){""}
             }
         };
 
