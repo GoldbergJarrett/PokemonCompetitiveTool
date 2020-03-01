@@ -18,6 +18,8 @@ namespace CompetitiveTool.Pages
         public List<Type> Types { get; set; }
         public List<Type> TypesSuperEffectiveAgainst { get; set; }
         public List<Type> CurrentlySelected { get; set; } = new List<Type>();
+        public bool DisplayOverlay { get; set; } = true;
+        public bool MinimizeOverlay { get; set; }
 
         public List<string> CorrectResponses { get; set; } = new List<string>();
         public List<string> IncorrectResponses { get; set; } = new List<string>();

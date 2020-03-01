@@ -45,13 +45,13 @@
         @foreach (Type type in Types)
         {
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                <TypeQuizOption Option="type" OnClickHandler="Guess"/>
+                <TypeQuizOption Option="type" OnClickHandler="Guess" />
 
             </div>
         }
     </div>
     <div @onclick="Submit" class="btn btn-primary">Attack!</div>
-    @if(HasResponded)
+    @if (HasResponded)
     {
         <div>
             <div style="color: green;">
@@ -74,7 +74,32 @@
             </div>
         </div>
     }
-    <div style="opacity: 0.8; position: absolute; top: 5%; left: 10%; width: 80%; height: 80%; background-color: lightgray;">
-        Hello!
-    </div>
+    @if (DisplayOverlay)
+    {
+        @if (!MinimizeOverlay)
+        {
+            <div style="opacity: 0.8; position: absolute; top: 5%; left: 10%; width: 80%; height: 80%; background-color: lightgray;">
+                <div style="height: 20%; position: relative;">
+                    <div style="width: 10%; font-size: 40px; position:absolute; top: 0px; right: 5px; cursor: pointer;">
+                        <span @onclick="(() => MinimizeOverlay = true)">-</span>
+                        <span @onclick="(() => DisplayOverlay = false)">x</span>
+                    </div>
+                </div>
+                <div style="height: 80%;">
+                    Hello!
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="opacity: 0.8; position: absolute; bottom: 5%; left: 10%; width: 80%; height: 20%; background-color: lightgray;">
+                <div style="height: 100%; position: relative;">
+                    <div style="width: 10%; font-size: 40px; position:absolute; top: 0px; right: 5px; cursor: pointer;">
+                        <span @onclick="(() => MinimizeOverlay = false)" class="oi-magnifying-glass"></span>
+                        <span @onclick="(() => DisplayOverlay = false)">x</span>
+                    </div>
+                </div>
+            </div>
+        }
+    }
 </div>
