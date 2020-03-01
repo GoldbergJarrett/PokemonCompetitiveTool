@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using Type = CompetitiveTool.Data.Type;
 
+
 <h1>Test your knowledge of the types in Pokemon!</h1>
 
 <div @onclick="(() => GenerateRandomTypes())" class="btn btn-primary">Regenerate</div>
@@ -39,11 +40,11 @@
     TYPE CHOICES
 </div>
 
-<div class="container" style="margin-bottom: 50px;">
+<div class="container" style="margin-bottom: 50px; position: relative;">
     <div class="row">
         @foreach (Type type in Types)
         {
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <TypeQuizOption Option="type" OnClickHandler="Guess"/>
 
             </div>
@@ -73,4 +74,7 @@
             </div>
         </div>
     }
+    <div style="opacity: 0.8; position: absolute; top: 5%; left: 10%; width: 80%; height: 80%; background-color: lightgray;">
+        Hello!
+    </div>
 </div>
