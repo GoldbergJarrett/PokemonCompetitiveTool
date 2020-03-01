@@ -153,7 +153,17 @@ namespace CompetitiveTool.Pages
 
             Types = types;
 
+            RandomizeAnswerLocation(Types);
+
             TypesSuperEffectiveAgainst = TypeService.GetSuperEffectiveAgainst(type);
+        }
+
+        public void RandomizeAnswerLocation(List<Type> list)
+        {
+            int k = rnd.Next(0, 6);
+            Type temp = list[k];
+            list[k] = list[5];
+            list[5] = temp;
         }
 
         public void Guess(Type type)
