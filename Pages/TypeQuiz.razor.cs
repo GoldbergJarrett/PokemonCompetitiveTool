@@ -141,7 +141,8 @@ namespace CompetitiveTool.Pages
 
             if(CurrentObjType.SuperEffective.Count > 0)
             {
-                temp2 = TypeService.GetTypeByName(CurrentObjType.SuperEffective[0]);
+                int k = rnd.Next(0, CurrentObjType.SuperEffective.Count);
+                temp2 = TypeService.GetTypeByName(CurrentObjType.SuperEffective[k]);
             }
             else
             {

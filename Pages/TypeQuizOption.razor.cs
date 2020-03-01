@@ -26,6 +26,7 @@ namespace CompetitiveTool.Pages
                 _option = value;
             }
         }
+
         [Parameter]
         public EventCallback<Type> OnClickHandler { get; set; }
 
