@@ -9,8 +9,23 @@ namespace CompetitiveTool.Pages
 {
     public partial class TypeQuizOption : ComponentBase
     {
+        private Type _option;
         [Parameter]
-        public Type Option { get; set; }
+        public Type Option 
+        {
+            get => _option;
+            set
+            {
+                if (Option != null)
+                {
+                    if (!Option.Equals(value))
+                    {
+                        IsSelected = false;
+                    }
+                }
+                _option = value;
+            }
+        }
         [Parameter]
         public EventCallback<Type> OnClickHandler { get; set; }
 
@@ -36,5 +51,6 @@ namespace CompetitiveTool.Pages
         }
 
         
+
     }
 }

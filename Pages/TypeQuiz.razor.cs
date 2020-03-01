@@ -46,6 +46,7 @@ namespace CompetitiveTool.Pages
 
         public void GenerateRandomTypes(string type = null)
         {
+            CurrentlySelected = new List<Type>();
             if(type == null)
             {
                 while (type == "Normal" || type == null)
